@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} - Index {% endblock %}
+
+{% block content %}
+<div id="content-wrapper" class="d-flex flex-column bg-gradient-primary">
+    <div class="row align-items-baseline">
+        <div>
+            <img src={{ url_for('static', filename='image/telefonia2_resized.jpg') }} class="figure-img img-fluid rounded" alt="...">
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4"></div>
+         <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Fale Mais</h6>
+                    <div class="text-center alert alert-warning" role="alert">
+                        <p> Com o novo produto <b>FaleMais</b> da Telzir o cliente adquire um plano e pode falar de <b>graça</b> até
+                            um determinado tempo (em minutos) e só paga os minutos excedentes. Os minutos excedentes
+                            tem um acréscimo de 10% sobre a tarifa normal do minuto. Os planos são <b>FaleMais 30 (30
+                                minutos), FaleMais 60 (60 minutos) e FaleMais 120 (120 minutos)</b>. </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="container text-center">
+                              <div class="row">
+                                <div class="col">
+                                  Origem
+                                </div>
+                                <div class="col">
+                                  Destino
+                                </div>
+                                <div class="col">
+                                  Tempo
+                                </div>
+                                <div class="col">
+                                  Plano Fale Mais
+                                </div>
+                                 <div class="col">
+
+                                  </div>
+                              </div>
+                        </div>
+                        <form id="form" class="user" method="POST"  >
+                            <div class="container text-center">
+                              <div class="row">
+                                <div class="col">
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="origin" name="origin">
+                                      <option selected>Código da origem</option>
+                                     {% for codes in code %}
+                                          <option value={{ codes[0] }}>{{ codes[1] }}</option>
+                                    {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="destiny" name="destiny">
+                                      <option selected>Código do destino</option>
+                                       {% for codes in code %}
+                                          <option value={{ codes[0] }}>{{ codes[1] }}</option>
+                                       {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col">
+                                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="time" name="time">
+                                          <option selected>Tempo</option>
+                                        {% for times in time %}
+                                          <option value={{ times[0] }}>{{ times[0] }}</option>
+                                        {% endfor %}
+                                     </select>
+                                </div>
+                                <div class="col">
+                                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="plans" name="plans">
+                                          <option selected>Planos</option>
+                                     {% for results in plan %}
+                                          <option value={{ results[1] }}>{{ results[0] }}</option>
+                                    {% endfor %}
+                                     </select>
+                                </div>
+                                  <div class="col">
+                                      <input type="button" class="btn btn-primary" onclick="enviar_ajax()" value="Calcular">
+
+                                  </div>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="text-center alert alert-warning" role="alert" >
+                            </div>
+                             <div class="container" style="margin-left: 30%;">
+                                  <div class="row row-cols-3">
+                                    <div class="col">Valor com FaleMais</div>
+                                    <div class="col">Valor sem FaleMais</div>
+                                    <div class="col"></div>
+                                    <div id="pricewith" class="col"><b> </b></div>
+                                    <div id="pricewithout" class="col"><b> </b></div>
+                                    <div class="col"><b> </b></div>
+                                  </div>
+                             </div>
+                </div>
+            </div>
+    </div>    
+</div>
+
+{% endblock %}
