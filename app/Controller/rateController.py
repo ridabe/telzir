@@ -37,6 +37,9 @@ def calc_plan() -> float:
             # multa por exceder
             indemnityPrice = planCalculateService.calculate_indemnity(price)
             pricewithPlan = planCalculateService.calculate_with_plan(surplusMin, indemnityPrice)
+            if pricewithPlan < 0:
+                pricewithPlan = 0
+
         else:
             pricewithPlan = 0
 
