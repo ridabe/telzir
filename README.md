@@ -13,17 +13,31 @@ sem o plano. O custo inicial de aquisição do plano deve ser desconsiderado par
 
 # Tecnologia
 - `Sistema desenvolvido em Python versão:3.10`
+  - [Flask Framework](https://flask-ptbr.readthedocs.io/en/latest/)
 - `Base de dado utilizada: SQLITE`
+- `Java Script / Ajax`
+- `Bootstrap`
 
 ## Requisitos
 
 Esse projeto exige a utilização do [Docker](https://www.docker.com/) localmente.
 
+Esse projeto exige a utilização do [Python](https://python.org.br/) localmente.
 
-# Instalação
-- Tenha o python versao 3.10 instalado em sua maquina;
+# Instalação com docker
+## Setup local
+---
+### Subindo o ambiente de dev com docker
+- Necessário ter o `docker` instalado na sua máquina
+    - `docker -v`
+- Rodar o comando `sudo docker build -t telzir .` para buildar o container
+- Rodar o comando `sudo docker run -it telzir` para rodar a imagem
+    - Sistema deve começar a ouvir no endereço `localhost:5000`
+
+### Subindo o ambiente de dev sem docker
+- Tenha o python versao 3.10 instalado em sua máquina;
 - Copie todo conteudo para uma pasta:
-- instala o venv em seu ambiente como o coamndo:
+- instalar o venv em seu ambiente como o comando:
     ```bash
     python3 -m venv nome_do_ambiente_virtual
     ```
@@ -31,6 +45,15 @@ Esse projeto exige a utilização do [Docker](https://www.docker.com/) localment
     ```bash
     source nome_do_ambiente_virtual/bin/activate
     ```
+- Istale as bibliotecas utilizadas no projeto pelo arquivo requeriments.txt com o comando:
+    ```bash
+    pip install -r requirements.txt
+    ```
+- Para rodar o sistema execute na pasta raiz do projeto o comando:
+  ```bash
+  python main.py
+  ``` 
+- O banco de dados SQLITE estará localizado na pasta app/db.
 
 # URL
 - `O sistema ira rodar no endereçõ 127.0.0.1/5000`
