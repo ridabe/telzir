@@ -4,4 +4,8 @@ from app.Controller import rateController
 app.run(debug=True)
 
 if __name__ == "__main__":
-    app.run()
+    print("Servidor Rodando!!")
+    app.run(debug=True)
+
+
+

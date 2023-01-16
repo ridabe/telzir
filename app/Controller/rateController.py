@@ -17,8 +17,8 @@ def calc_plan() -> float:
     data = request.get_json()
     origin = data["origin"]
     destiny = data["destiny"]
-    timeCall = data["time"]
-    plan = data["plan"]
+    timeCall = int(data["time"])
+    plan = int(data["plan"])
 
 
     plans = plansService.PlansService(planRepository.PlansRepository)
