@@ -37,9 +37,9 @@ Esse projeto exige a utilização do [Docker](https://www.docker.com/) localment
 
 # Testes Unitários
 ***Para rodar os testes unitários, netre na pasta raiz do sistema e rode o comnado***
-    ```bash
+```bash
     python -m unittest -v
-    ```
+```
 
 ## Orientações para contribuidores
 
