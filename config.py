@@ -1,8 +1,8 @@
 DEBUG = True
 
-APPNAME = "Algoritmum"
+APPNAME = "TelZir"
 
-SQLALCHEMY_DATABASE_URI = 'mysql://root:algo#2023@44.197.13.55/algoritmum'
+SQLALCHEMY_DATABASE_URI = ''
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-SECRET_KEY = 'algoritmum'
+SECRET_KEY = 'telzir'
